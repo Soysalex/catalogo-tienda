@@ -2,7 +2,7 @@ const SUPABASE_URL = "https://cmovggyxmtzeqcazolvx.supabase.co";
 const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNtb3ZnZ3l4bXR6ZXFjYXpvbHZ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE1Njk5NjAsImV4cCI6MjA5NzE0NTk2MH0.OFbTJz22iPp2Jdv7z1l6M67wTKanmeousGXgygOILA8";
 
 const clienteSupabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-const CONTRASENA_ADMIN = "neibys43."; // <-- CAMBIA ESTA CONTRASEÑA, DAVID
+const CONTRASENA_ADMIN = "neibys43"; // <-- CAMBIA ESTA CONTRASEÑA, DAVID
 let inventarioGlobal = []; // Para guardar los datos en memoria y no recargar tanto
 
 // --- MENÚ Y VISTAS ---
