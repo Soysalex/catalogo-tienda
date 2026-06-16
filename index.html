@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Virtual</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="contenedor-switch">
+            <span>🌙</span>
+            <label class="switch">
+                <input type="checkbox" id="toggle-oscuro" onchange="toggleModoOscuro()">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <h1>Tienda Virtual</h1>
+        
+        <div class="menu-discreto">
+            <span id="icono-menu" onclick="toggleMenu()">⋮</span>
+            <div id="dropdown-menu" class="oculto">
+                <button onclick="verVista('cliente')">Catálogo Público</button>
+                <button onclick="pedirPassword()">Modo Admin</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="vista-cliente" class="vista">
+            <h2>Nuestros Productos</h2>
+            <div id="contenedor-productos" class="grid-productos">
+                <p class="cargando">Cargando catálogo...</p>
+            </div>
+        </section>
+
+        <section id="vista-admin" class="vista oculto">
+            <h2>Panel de Administración</h2>
+            
+            <form id="formulario-producto">
+                <input type="hidden" id="producto-id"> <div class="campo">
+                    <label for="nombre">Nombre del Producto:</label>
+                    <input type="text" id="nombre" required placeholder="Ej. Crema Humectante Cyzone">
+                </div>
+
+                <div class="campo">
+                    <label for="precio">Precio ($):</label>
+                    <input type="text" id="precio" required placeholder="Ej. 10">
+                </div>
+
+                <div class="campo">
+                    <label for="descripcion">Descripción:</label>
+                    <textarea id="descripcion" rows="3" placeholder="Breve descripción del producto..."></textarea>
+                </div>
+
+                <div class="campo">
+                    <label for="imagen">Foto del Producto:</label>
+                    <input type="file" id="imagen" accept="image/*" required>
+                    <small id="nota-imagen" class="oculto">Deja vacío si no quieres cambiar la foto actual.</small>
+                </div>
+
+                <button type="submit" id="btn-guardar">Guardar Producto</button>
+                <button type="button" id="btn-cancelar" class="oculto btn-rojo" onclick="cancelarEdicion()">Cancelar Edición</button>
+            </form>
+
+            <hr style="margin: 30px 0; border: 1px solid #ddd;">
+
+            <div class="gestion-productos">
+                <h3>Productos Publicados</h3>
+                <div id="lista-admin">
+                    <p>Cargando inventario...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
