@@ -190,7 +190,7 @@ async function cargarProductos() {
         contenedor.innerHTML = "";
         
         productos.forEach(prod => {
-            const tlf = "584121468873"; 
+            const tlf = "584121868047"; 
             const msg = encodeURIComponent(`Hola! Me interesa el producto: ${prod.nombre} ($${prod.precio}). ¿Está disponible?`);
             const linkWhatsapp = `https://wa.me/${tlf}?text=${msg}`;
 
